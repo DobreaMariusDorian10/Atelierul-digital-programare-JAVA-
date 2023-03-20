@@ -28,7 +28,7 @@ public class Main {
             for (int k = 1; k < a.length - 1; k++) {
                 if (a[i] +a[k]==0) {
                     a = removeTheElement(a,i);
-                    a = removeTheElement(a,k);
+                    a = removeTheElement(a,k-1);
                     contor++;
                 }
             }
