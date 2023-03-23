@@ -4,11 +4,11 @@ import java.io.*;
 public class Anagram {
     public static void main(String[] args) throws FileNotFoundException {
         Scanner sc= new Scanner(System.in);
-        System.out.print("Introduceti un cuvant ");
+        System.out.print("Introduceti un cuvant (delay pentru ca trebuie sa caute in foarte multe cuvinte)");
         String CuvantInput = sc.nextLine();
         System.out.print("You have entered: "+CuvantInput+"\n");
         try {
-            URL url = new URL("https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt");
+            URL url = new URL("http://www.math.sjsu.edu/~foster/dictionary.txt");
             InputStream input = url.openStream();
             BufferedReader reader = new BufferedReader(new InputStreamReader(input));
             StringBuilder cuvinte = new StringBuilder();
