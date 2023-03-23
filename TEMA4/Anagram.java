@@ -2,13 +2,14 @@ import java.util.*;
 import java.net.*;
 import java.io.*;
 public class Anagram {
+
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner sc= new Scanner(System.in);
-        System.out.print("Introduceti un cuvant (delay pentru ca trebuie sa caute in foarte multe cuvinte)");
-        String CuvantInput = sc.nextLine();
+        Scanner sc= new Scanner(System.in); //System.in is a standard input stream
+        System.out.print("Introduceti un cuvant ");
+        String CuvantInput = sc.nextLine();              //reads string
         System.out.print("You have entered: "+CuvantInput+"\n");
         try {
-            URL url = new URL("http://www.math.sjsu.edu/~foster/dictionary.txt");
+            URL url = new URL("https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt");
             InputStream input = url.openStream();
             BufferedReader reader = new BufferedReader(new InputStreamReader(input));
             StringBuilder cuvinte = new StringBuilder();
@@ -29,6 +30,7 @@ public class Anagram {
                     charFreq.put(c, 1);
                 }
             }
+
             //itereaza pe fiecare cuvant
             for(int i=0;i<strSplit.length;i++) {
                 //creaza pentru fiecare cuvant un map
